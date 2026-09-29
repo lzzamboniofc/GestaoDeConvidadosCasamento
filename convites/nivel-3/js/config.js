@@ -220,7 +220,7 @@ window.WEDDING_CONFIG = {
     title: "Informações importantes",
     items: [
       { icon: "car", title: "Estacionamento", text: "Há vagas próximo ao local. Se for beber, considere táxi ou aplicativo." },
-      { icon: "clock", title: "Pontualidade", text: "A cerimônia começa às 17h00. Recomendamos chegar com 30 minutos de antecedência." },
+      { icon: "clock", title: "Pontualidade", text: "A cerimônia começa às 19h00. Recomendamos chegar com 30 minutos de antecedência. (18h:30min)" },
       { icon: "camera", title: "Fotos", text: "Registre e compartilhe os momentos, mantendo o corredor livre durante a cerimônia." }
     ]
   },
@@ -230,10 +230,10 @@ window.WEDDING_CONFIG = {
     eyebrow: "Dúvidas frequentes",
     title: "Antes do grande dia",
     items: [
-      { question: "Posso levar acompanhante?", answer: "Considere apenas os nomes indicados no convite. Caso exista acompanhante liberado, essa informação pode ser combinada com os noivos." },
+      { question: "Posso levar acompanhante?", answer: "Consideraremos apenas os nomes indicados no convite. Caso exista acompanhante liberado, essa informação pode ser combinada com os noivos." },
       { question: "Até quando preciso confirmar presença?", answer: "Pedimos que a confirmação seja feita até 10 de Março de 2027 para facilitar a organização do evento." },
-      { question: "A cerimônia e a recepção são no mesmo local?", answer: "Não, a cerimônia será na Paróquia São Luís Gonzaga e a recepção será no Buffet Encanto" },
-      { question: "Vai ter estacionamento?", answer: "Sim. Porém, seria na rua próximo ao local da festa." }
+      { question: "A cerimônia e a recepção são no mesmo local?", answer: "Não, a cerimônia será na Paróquia São Luís Gonzaga e a recepção será no Buffet Encanto." },
+      { question: "Vai ter estacionamento?", answer: "Sim. Porém, as vagas situam-se na rua próximo ao local da festa." }
     ]
   },
 
