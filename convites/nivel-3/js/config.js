@@ -61,11 +61,89 @@ window.WEDDING_THEMES = {
     warm: "#B78F82",
     line: "#D8D3DE",
     heroText: "#FFFFFF"
+  },
+  dustyBlue: {
+    background: "#F4F7F9",
+    surface: "#FFFDF9",
+    surfaceAlt: "#E7EEF3",
+    text: "#24323D",
+    muted: "#687985",
+    accent: "#718FA3",
+    accentDark: "#405E73",
+    accentSoft: "#DCE7ED",
+    warm: "#B99A7A",
+    line: "#D6E0E6",
+    heroText: "#FFFFFF"
+  },
+  navy: {
+    background: "#F3F5F7",
+    surface: "#FFFDF9",
+    surfaceAlt: "#E7ECF1",
+    text: "#1E2A35",
+    muted: "#66717C",
+    accent: "#3F5E7A",
+    accentDark: "#1F3550",
+    accentSoft: "#DCE5EC",
+    warm: "#B89B7A",
+    line: "#D5DCE2",
+    heroText: "#FFFFFF"
+  },
+  navyBlue: {
+    background: "#F2F4F7",
+    surface: "#FFFFFF",
+    surfaceAlt: "#E3E9EF",
+    text: "#182433",
+    muted: "#5F6D7B",
+    accent: "#2F5273",
+    accentDark: "#162D46",
+    accentSoft: "#D5E0E9",
+    warm: "#B89A78",
+    line: "#CFD7DF",
+    heroText: "#FFFFFF"
+  },
+  royalBlue: {
+    background: "#F3F6FA",
+    surface: "#FFFFFF",
+    surfaceAlt: "#E4EBF5",
+    text: "#172A3D",
+    muted: "#607286",
+    accent: "#285F91",
+    accentDark: "#173F68",
+    accentSoft: "#D5E3F0",
+    warm: "#B99A76",
+    line: "#CEDAE6",
+    heroText: "#FFFFFF"
+  },
+  navy: {
+    background: "#F4F5F7",
+    surface: "#FFFFFF",
+    surfaceAlt: "#E4E9F0",
+    text: "#10243A",
+    muted: "#5D6D7D",
+    accent: "#1F4E79",
+    accentDark: "#0D2D4F",
+    accentSoft: "#D2DFEB",
+    warm: "#B99B78",
+    line: "#CCD5DE",
+    heroText: "#FFFFFF"
+  },
+  deepBlue: {
+    background: "#F4F6FA",
+    surface: "#FFFFFF",
+    surfaceAlt: "#E2EAF5",
+    text: "#132A42",
+    muted: "#5C7086",
+    accent: "#245D9C",
+    accentDark: "#123B6D",
+    accentSoft: "#D4E2F2",
+    warm: "#B99A76",
+    line: "#CCD9E7",
+    heroText: "#FFFFFF"
   }
 };
 
 window.WEDDING_CONFIG = {
-  themePreset: "sage",
+  themePreset: "deepBlue",
 
   fonts: {
     title: '"Cormorant Garamond", Georgia, serif',
@@ -124,8 +202,10 @@ window.WEDDING_CONFIG = {
 
   story: {
     enabled: true,
+    pretitle: "1 João 4:19",
+    phrase: "Nós amamos porque ele nos amou primeiro.",
     eyebrow: "Nossa história",
-    title: "1 João 4:19 - Nós amamos porque ele nos amou primeiro.",
+    title: "O sem planos, virou cem planos...",
     image: {
       desktop: "assets/images/story.jpg",
       mobile: "assets/images/story.jpg"
@@ -164,8 +244,8 @@ window.WEDDING_CONFIG = {
       mapsUrl: "https://maps.app.goo.gl/nietYBWBGj9y7Lm67",
       mapsLabel: "Como chegar",
       image: {
-        desktop: "assets/images/buffet.jpg",
-        mobile: "assets/images/buffet.jpg"
+        desktop: "assets/images/buffet.png",
+        mobile: "assets/images/buffet.png"
       }
     }
   ],
