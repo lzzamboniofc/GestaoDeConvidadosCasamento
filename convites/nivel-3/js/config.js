@@ -80,15 +80,15 @@ window.WEDDING_CONFIG = {
   },
 
   wedding: {
-    dateISO: "2027-04-03T17:00:00-03:00",
-    endISO: "2027-04-03T23:30:00-03:00",
-    longDate: "03 de Abril de 2027",
-    shortDate: "03 · 04 · 2027",
+    dateISO: "2027-04-24T17:00:00-03:00",
+    endISO: "2027-04-24T23:30:00-03:00",
+    longDate: "24 de Abril de 2027",
+    shortDate: "24 · 04 · 2027",
     weekday: "Sábado",
-    day: "03",
+    day: "24",
     month: "Abril",
     year: "2027",
-    time: "17h00",
+    time: "19h00",
     city: "Itu · São Paulo",
     calendarTitle: "Casamento — Liliane & Igor",
     calendarDescription: "Celebração do casamento de Liliane e Igor.",
@@ -125,42 +125,47 @@ window.WEDDING_CONFIG = {
   story: {
     enabled: true,
     eyebrow: "Nossa história",
-    title: "O acaso virou escolha. A escolha virou casa...",
+    title: "1 João 4:19 - Nós amamos porque ele nos amou primeiro.",
     image: {
       desktop: "assets/images/story.jpg",
       mobile: "assets/images/story.jpg"
     },
     year: "desde 2022",
     paragraphs: [
-      "Tudo começou sem grandes planos: uma conversa que durou mais do que deveria, um café que virou jantar e a sensação de que o tempo passava diferente quando estávamos juntos.",
-      "Vieram viagens, mudanças, planos e a certeza tranquila de que queríamos continuar escolhendo um ao outro. Agora, queremos celebrar essa escolha com quem torna nossa história ainda mais especial."
+      "Tudo começou sem grandes planos, em uma festa, através de um amigo que nos apresentou . Naquele momento, nenhum de nós poderia imaginar que aquele encontro daria início a uma história que chegaria tão longe.",
+
+      "Entre conversas, encontros e momentos compartilhados, fomos nos conhecendo e descobrindo que aquele acaso tinha, na verdade, um propósito muito maior.",
+
+      "O que começou sem grandes expectativas se transformou em amor, companheirismo e em uma vontade de construir juntos uma vida inteira.",
+
+      "Hoje, depois de tantos momentos vividos lado a lado, escolhemos dar o passo mais importante da nossa história: dizer “sim” um ao outro diante de Deus e das pessoas que amamos."
     ],
-    quote: "Algumas histórias começam por acaso. As melhores continuam por escolha."
+    quote: "Sem planejar o começo, encontramos um no outro o futuro que queremos viver."
   },
 
   events: [
     {
       label: "Cerimônia",
-      time: "17h00 · chegada a partir das 16h30",
+      time: "19h00 · chegar as 18h30",
       venue: "Paróquia São Luís Gonzaga",
       address: "R. Leonardo Piunti, 475 — São Luiz, Itu — SP",
       mapsUrl: "https://maps.app.goo.gl/cBcnP7PYY2Ed3Zdf9",
       mapsLabel: "Abrir no mapa",
       image: {
-        desktop: "assets/images/story.jpg",
-        mobile: "assets/images/story.jpg"
+        desktop: "assets/images/paroquia.jpg",
+        mobile: "assets/images/paroquia.jpg"
       }
     },
     {
       label: "Recepção",
-      time: "19h00 · após a cerimônia",
-      venue: "Paróquia São Luís Gonzaga",
-      address: "R. Leonardo Piunti, 475 — São Luiz, Itu — SP",
-      mapsUrl: "https://maps.app.goo.gl/cBcnP7PYY2Ed3Zdf9",
+      time: "Te aguardamos aqui, após a cerimônia",
+      venue: "Buffet Encanto",
+      address: "Av. Walter Nardelli, 1074 - Jardim Guarujá, Salto - SP, 13323-260",
+      mapsUrl: "https://maps.app.goo.gl/nietYBWBGj9y7Lm67",
       mapsLabel: "Como chegar",
       image: {
-        desktop: "assets/images/gallery-4.jpg",
-        mobile: "assets/images/gallery-4.jpg"
+        desktop: "assets/images/buffet.jpg",
+        mobile: "assets/images/buffet.jpg"
       }
     }
   ],
@@ -175,11 +180,11 @@ window.WEDDING_CONFIG = {
       mobile: "assets/images/gallery-2.jpg"
     },
     items: [
-      { time: "16:30", title: "Boas-vindas", text: "Chegue com calma e encontre seu lugar.", image: { desktop: "assets/images/gallery-1.jpg", mobile: "assets/images/gallery-1.jpg" } },
-      { time: "17:00", title: "Cerimônia", text: "O momento do nosso sim.", image: { desktop: "assets/images/story.jpg", mobile: "assets/images/story.jpg" } },
-      { time: "19:00", title: "Recepção", text: "Brindes, encontros e celebração.", image: { desktop: "assets/images/gallery-4.jpg", mobile: "assets/images/gallery-4.jpg" } },
-      { time: "20:30", title: "Jantar", text: "Um momento preparado para compartilhar à mesa.", image: { desktop: "assets/images/gallery-5.jpg", mobile: "assets/images/gallery-5.jpg" } },
-      { time: "21:00", title: "Pista aberta", text: "Hora de comemorar sem pressa.", image: { desktop: "assets/images/gallery-3.jpg", mobile: "assets/images/gallery-3.jpg" } }
+      { time: "18:30", title: "Boas-vindas", text: "Chegue com calma e encontre seu lugar.", image: { desktop: "assets/images/gallery-1.jpg", mobile: "assets/images/gallery-1.jpg" } },
+      { time: "19:00", title: "Cerimônia", text: "O momento do nosso sim.", image: { desktop: "assets/images/story.jpg", mobile: "assets/images/story.jpg" } },
+      { time: "20:30", title: "Recepção", text: "Brindes, encontros e celebração.", image: { desktop: "assets/images/gallery-4.jpg", mobile: "assets/images/gallery-4.jpg" } },
+      { time: "21:30", title: "Jantar", text: "Um momento preparado para compartilhar à mesa.", image: { desktop: "assets/images/gallery-5.jpg", mobile: "assets/images/gallery-5.jpg" } },
+      { time: "22:00", title: "Pista aberta", text: "Hora de comemorar sem pressa.", image: { desktop: "assets/images/gallery-3.jpg", mobile: "assets/images/gallery-3.jpg" } }
     ]
   },
 
@@ -199,9 +204,9 @@ window.WEDDING_CONFIG = {
   dressCode: {
     enabled: true,
     eyebrow: "Dress code",
-    title: "Esporte fino",
-    text: "Elegante, leve e confortável. Queremos que você se sinta à vontade para aproveitar cada momento da celebração.",
-    note: "Pedimos carinho especial para que branco, off-white, champagne e tons muito claros fiquem reservados para a noiva.",
+    title: "Traje Esporte fino",
+    text: "Elegância e conforto para celebrar conosco. Blazer e gravata não são necessários, também como vestido longo para as mulheres",
+    note: "Pedimos gentilmente que branco e azul-marinho não sejam utilizados, pois essas cores estarão reservadas para a composição do casamento.",
     image: {
       desktop: "assets/images/dress-code.jpg",
       mobile: "assets/images/dress-code.jpg"
@@ -214,7 +219,7 @@ window.WEDDING_CONFIG = {
     eyebrow: "Para você se organizar",
     title: "Informações importantes",
     items: [
-      { icon: "car", title: "Estacionamento", text: "Haverá estacionamento no local. Se for beber, considere táxi ou aplicativo." },
+      { icon: "car", title: "Estacionamento", text: "Há vagas próximo ao local. Se for beber, considere táxi ou aplicativo." },
       { icon: "clock", title: "Pontualidade", text: "A cerimônia começa às 17h00. Recomendamos chegar com 30 minutos de antecedência." },
       { icon: "camera", title: "Fotos", text: "Registre e compartilhe os momentos, mantendo o corredor livre durante a cerimônia." }
     ]
@@ -227,8 +232,8 @@ window.WEDDING_CONFIG = {
     items: [
       { question: "Posso levar acompanhante?", answer: "Considere apenas os nomes indicados no convite. Caso exista acompanhante liberado, essa informação pode ser combinada com os noivos." },
       { question: "Até quando preciso confirmar presença?", answer: "Pedimos que a confirmação seja feita até 10 de Março de 2027 para facilitar a organização do evento." },
-      { question: "A cerimônia e a recepção são no mesmo local?", answer: "Neste exemplo, sim. Caso seu evento tenha locais diferentes, basta cadastrar ambos no arquivo de configuração." },
-      { question: "Vai ter estacionamento?", answer: "Sim. As orientações podem ser personalizadas nesta seção para cada evento." }
+      { question: "A cerimônia e a recepção são no mesmo local?", answer: "Não, a cerimônia será na Paróquia São Luís Gonzaga e a recepção será no Buffet Encanto" },
+      { question: "Vai ter estacionamento?", answer: "Sim. Porém, seria na rua próximo ao local da festa." }
     ]
   },
 
@@ -252,7 +257,7 @@ window.WEDDING_CONFIG = {
 
     maxGuestsDefault: 4,
     guestLimitQueryParam: "lugares",
-    baseMessage: "Olá! Estou respondendo ao convite de casamento de Liliane e Igor."
+    baseMessage: "Olá! Estou respondendo ao convite de casamento de Liliane e Igor. E confirmo minha presença"
   },
 
   music: {
