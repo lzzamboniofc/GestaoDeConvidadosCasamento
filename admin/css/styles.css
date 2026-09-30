@@ -34,3 +34,98 @@
 
 /* v1.9 — detalhes da resposta RSVP */
 .mini-btn--response{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}.mini-btn--response:hover{background:#27392e;color:#fff}.row-actions--compact{flex-wrap:wrap}.response-dialog{max-width:min(720px,calc(100vw - 28px))}.response-dialog__panel{padding:28px}.response-status-wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line)}.response-date{font-size:12px;color:var(--muted);text-align:right}.response-summary-grid{display:grid;grid-template-columns:1.2fr 1fr .55fr;gap:10px;margin:18px 0}.response-summary-grid article{padding:15px;border:1px solid var(--line);border-radius:11px;background:var(--surface2);min-width:0}.response-summary-grid span,.response-block__label{display:block;margin-bottom:5px;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:800}.response-summary-grid strong{display:block;font-size:14px;line-height:1.45;overflow-wrap:anywhere}.response-block{padding:17px 0;border-top:1px solid var(--line)}.response-names{display:flex;flex-wrap:wrap;gap:7px}.response-names span{display:inline-flex;padding:7px 10px;border-radius:999px;background:#edf2ee;color:var(--accent-dark);font-size:12px;font-weight:700}.response-message-card{margin-top:2px;padding:20px;border-radius:13px;background:linear-gradient(135deg,#f4f1e9,#f8f8f5);border:1px solid #e4dfd3}.response-message-card p{margin:8px 0 0;font-family:var(--serif);font-size:clamp(21px,3vw,28px);line-height:1.45;color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere}.response-message-card p.is-empty{font-family:var(--sans);font-size:13px;color:var(--muted);font-style:italic}.response-dialog__panel footer{margin-top:20px}@media(max-width:650px){.response-dialog__panel{padding:20px 16px}.response-status-wrap{align-items:flex-start;flex-direction:column}.response-date{text-align:left}.response-summary-grid{grid-template-columns:1fr}.response-message-card{padding:17px}.response-message-card p{font-size:22px}.response-dialog__panel footer .btn{width:100%}}
+
+/* EDITOR DO CONVITE — formulário editorial, mobile-first */
+.editor-intro{background:#f3f6f8;border:1px solid #dce5eb;padding:22px clamp(18px,3vw,30px);margin:0 0 26px;line-height:1.6}
+.editor-intro strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:clamp(21px,3vw,28px);font-weight:500}
+.editor-intro p{max-width:800px;margin:9px 0 0;color:#536575;font-size:14px}
+.editor-intro .editor-intro__hint{font-size:12px;color:#526574}
+.editor-group{margin-bottom:14px;background:#fff;border:1px solid #dce2e6}
+.editor-group>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 23px;font-weight:700;cursor:pointer;list-style:none}
+.editor-group>summary::-webkit-details-marker{display:none}
+.editor-group>summary::after{content:'+';color:#677b89;font-size:23px;font-weight:400}
+.editor-group[open]>summary::after{content:'−'}
+.editor-group[open]>summary{border-bottom:1px solid #e2e7eb}
+.editor-content{padding:22px}
+.editor-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.editor-field{display:flex;flex-direction:column;gap:7px;font-weight:600;font-size:13px}
+.editor-field input,.editor-field select,.editor-field textarea{display:block;width:100%;min-width:0;padding:12px 13px;min-height:45px;background:white;border:1px solid #cbd5de;border-radius:5px;color:#283f50;font:inherit;font-weight:400}
+.editor-field textarea{resize:vertical;min-height:90px}
+.editor-field input[type=color]{padding:4px;width:100%;height:45px;cursor:pointer}
+.editor-field small{color:#687b86;font-size:11px;font-weight:400;line-height:1.5}
+.editor-switches{display:grid;grid-template-columns:1fr;gap:9px}
+.editor-switch{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 15px;background:#f6f8f9;border:1px solid #e1e7eb;cursor:pointer}
+.editor-switch span{font-size:13px;font-weight:600}.editor-switch input{accent-color:#285f91;width:19px;height:19px;cursor:pointer;flex-shrink:0}
+.editor-save{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;position:sticky;bottom:10px;z-index:5;padding:17px 20px;background:#fff;border:1px solid #e2e7eb;box-shadow:0 15px 50px rgba(22,44,62,.09)}
+.editor-save button{margin-left:auto}.editor-colors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.editor-separator{display:block;margin:4px 0 15px;color:#5e7082;font-size:12px}
+@media(min-width:740px){.editor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.editor-field--long{grid-column:1/-1}.editor-switches{grid-template-columns:repeat(2,minmax(0,1fr))}.editor-colors{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* v1.13 — PIX sem valor ou código de valor fixo por presente. */
+.editor-pix-mode-section[hidden]{display:none!important}
+.editor-pix-options{display:grid;grid-template-columns:1fr;gap:10px;border:0;margin:0;padding:0;min-width:0}
+.editor-pix-options legend{font-size:13px;font-weight:700;margin-bottom:12px}
+.editor-pix-option{display:flex;align-items:flex-start;gap:12px;background:#f7fafb;border:1px solid #d9e4eb;padding:15px;cursor:pointer;min-width:0}
+.editor-pix-option:has(input:checked){border-color:#28618d;background:#eff6fb;box-shadow:inset 3px 0 #28618d}
+.editor-pix-option input{flex-shrink:0;accent-color:#28618d;margin:3px 0 0;width:18px;height:18px}
+.editor-pix-option span{display:grid;gap:6px;min-width:0}.editor-pix-option strong{font-size:13px;line-height:1.4}.editor-pix-option small{font-size:11px;font-weight:400;line-height:1.65;color:#52697b}
+.editor-pix-mode-section{margin-top:18px}.editor-pix-mode-section>.editor-field{max-width:100%}
+.editor-pix-progress{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin:0 0 15px;padding:14px;background:#f0f5f8;border:1px solid #d9e3ea}
+.editor-pix-progress div{display:grid;gap:5px}.editor-pix-progress strong{font-size:13px}.editor-pix-progress small{max-width:570px;font-size:11px;line-height:1.55;color:#546a7a}.editor-pix-progress>span{padding:7px 10px;background:#fff;border:1px solid #d1dfe8;font-size:11px;font-weight:700;white-space:nowrap}
+.editor-pix-gift-list{display:grid;grid-template-columns:1fr;gap:12px}
+.editor-pix-gift{border:1px solid #dde5ea;padding:15px 15px 12px;background:#fff;min-width:0}
+.editor-pix-gift__head{display:flex;gap:12px;align-items:center;margin-bottom:13px;min-width:0}
+.editor-pix-gift__head>div{display:grid;gap:3px;min-width:0}.editor-pix-gift__head strong{font-size:13px;line-height:1.5}.editor-pix-gift__head span:not(.editor-pix-gift__number){font-size:12px;color:#536d82;font-weight:700}
+.editor-pix-gift__number{display:grid;place-items:center;flex:0 0 35px;height:35px;border:1px solid #d1dfe8;font-size:11px;font-weight:700}
+.editor-pix-gift .editor-field textarea{font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;min-height:68px}
+.editor-pix-gift__status{margin:8px 0 0;font-size:11px;line-height:1.5;color:#647484}
+.editor-pix-gift__status[data-tone=error]{color:#a22626;font-weight:700}.editor-pix-gift__status[data-tone=warning]{color:#865810}.editor-pix-gift__status[data-tone=success]{color:#246a43}
+.editor-pix-gift textarea[aria-invalid=true]{border-color:#bb4444;background:#fff9f9}
+.editor-pix-common{margin-top:19px;border-top:1px solid #e4ebee;padding-top:20px}
+@media(min-width:740px){.editor-pix-options{grid-template-columns:repeat(2,minmax(0,1fr))}.editor-pix-gift-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v1.15: gerenciador de mídias do casamento (admin) */
+.media-intro,.media-catalog-panel {margin-bottom:22px}
+.media-intro h2,.media-catalog-panel h2,.media-slots-panel h2 {margin:0 0 8px}
+.media-intro p,.media-catalog-panel p {color:var(--muted,#6c7574);line-height:1.65;margin:0 0 10px}
+.media-catalog-actions {display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:16px}
+.media-slots {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.media-slot {border:1px solid #dce2df;border-radius:12px;background:#fff;padding:14px;min-width:0;display:flex;align-items:start;gap:13px}
+.media-slot__thumb {width:112px;height:122px;object-fit:cover;border-radius:7px;background:#f0f2f0;flex:0 0 auto}
+.media-slot__body{min-width:0;flex:1;display:flex;flex-direction:column;gap:8px}
+.media-slot__body strong{font-size:14px}
+.media-slot__body small{color:#666;line-height:1.4;word-break:break-word}
+.media-slot__body input[type=file]{width:100%;max-width:100%;font-size:12px}
+.media-slot__status{display:inline-flex;align-self:start;font:600 11px/1.4 system-ui,sans-serif;padding:4px 7px;border-radius:4px;background:#eef3ee;color:#3d7451}
+.media-slot__status--demo{background:#f3f1eb;color:#7b735f}
+.media-slot__remove{font:600 12px/1.3 system-ui,sans-serif;background:transparent;color:#9a4141;border:0;padding:2px;cursor:pointer;align-self:start}
+.media-slot__remove:hover{text-decoration:underline}
+@media(max-width:1020px){.media-slots{grid-template-columns:1fr}}
+@media(max-width:480px){.media-slot{padding:11px;gap:10px}.media-slot__thumb{width:88px;height:112px}}
+
+/* v1.16 — edição de fotografias pelo casal com prévia e permissão por casamento */
+.media-permission-panel{display:grid;gap:14px}
+.media-permission-panel h2{margin:0}
+.media-permission-toggle{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px;border:1px solid var(--line,#d9dde4);border-radius:12px;cursor:pointer}
+.media-permission-toggle span{display:grid;gap:6px;font-weight:650}
+.media-permission-toggle small{font-weight:400;color:var(--muted,#657081);line-height:1.45}
+.media-permission-toggle input{width:20px;height:20px;accent-color:var(--accent,#41665d);flex-shrink:0}
+.media-slot__actions{display:flex;flex-wrap:wrap;gap:8px}
+.media-preview-dialog{max-width:min(92vw,630px);width:100%}
+.media-preview__panel{width:100%;max-width:630px}
+.media-preview__frame{min-height:190px;display:grid;place-items:center;background:#e9e4de;border-radius:10px;overflow:hidden}
+.media-preview__photo{display:block;width:100%;height:auto;max-height:58vh;aspect-ratio:16/9;object-fit:cover;object-position:center}
+.media-preview__photo--mobile{aspect-ratio:3/4;max-height:58vh;width:min(100%,310px)}
+.media-preview__panel .muted{line-height:1.55}
+@media(max-width:600px){.media-preview__panel{width:100%}.media-preview__photo{max-height:48vh}}
+
+/* Correção de navegação mobile — botão X, backdrop e rolagem do menu */
+.sidebar__mobile-header {display:none}
+.sidebar-backdrop {display:none}
+@media(max-width:980px) {
+  body.mobile-nav-open {overflow:hidden}
+  .sidebar {height:100vh;height:100dvh;overflow-y:auto;overscroll-behavior:contain;z-index:31;box-shadow:4px 0 24px rgba(0,0,0,.15)}
+  .sidebar__mobile-header {display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:40px;color:#dae5dc;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+  .sidebar__close {display:grid;place-items:center;width:40px;height:40px;flex:none;border:1px solid rgba(255,255,255,.32);border-radius:9px;background:rgba(255,255,255,.08);color:white;font-size:26px;line-height:1;cursor:pointer}
+  .sidebar__close:hover,.sidebar__close:focus-visible {background:rgba(255,255,255,.2)}
+  .sidebar-backdrop:not([hidden]) {position:fixed;inset:0;z-index:30;display:block;width:100%;height:100%;border:0;border-radius:0;background:rgba(9,21,13,.58);cursor:pointer}
+}

@@ -1,0 +1,9 @@
+/* A lista usa as mesmas 11 variáveis da paleta Nível 3. */
+:root{--bg:#F4F6FA;--surface:#fff;--surface-alt:#E2EAF5;--text:#132A42;--muted:#5C7086;--accent:#245D9C;--accent-dark:#123B6D;--accent-soft:#D4E2F2;--warm:#B99A76;--line:#CCD9E7;--hero-text:#fff;
+ --paper:var(--bg);--paper-2:var(--surface-alt);--ink:var(--text);--ink-soft:var(--muted);--accent-warm:var(--warm);--white:var(--surface);--black:var(--accent-dark);
+ --font-display:var(--title-font);--font-body:var(--body-font);--font-ui:var(--body-font);
+ --title-font:"Cormorant Garamond",Georgia,serif;--body-font:"Manrope",Arial,sans-serif}
+.gift-qr-box[hidden],.gift-copy-button[hidden],.gift-pay-link[hidden],.gift-empty[hidden]{display:none!important}
+.gift-pay-link{display:flex;align-items:center;justify-content:center;min-height:52px;margin-top:14px;background:var(--accent-dark);color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.05em}
+.gift-modal__note{font-size:12px;line-height:1.6}.gift-demo-notice{font-size:12px}
+.gift-hero__lead{font-size:15px}.gift-card h3{font-size:clamp(22px,4vw,30px)}

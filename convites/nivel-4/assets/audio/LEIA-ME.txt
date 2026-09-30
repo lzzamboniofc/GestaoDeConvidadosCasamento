@@ -1,2 +1,0 @@
-Coloque aqui um arquivo chamado musica.mp3 e ative a música em js/config.js.
-O template não toca áudio automaticamente: o convidado precisa tocar no botão.

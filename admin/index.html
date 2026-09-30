@@ -16,7 +16,11 @@
   <div class="auth-guard" id="authGuard"><div class="auth-guard__spinner"></div><p>Verificando acesso...</p></div>
 
   <div class="app" id="app" hidden>
-    <aside class="sidebar">
+    <aside class="sidebar" id="adminSidebar" aria-label="Navegação do painel">
+      <div class="sidebar__mobile-header">
+        <span>Menu do painel</span>
+        <button class="sidebar__close" id="closeMobileMenu" type="button" aria-label="Fechar menu" title="Fechar menu">&times;</button>
+      </div>
       <div class="brand">
         <span class="brand__mark">GC</span>
         <div><strong id="brandName">Gestão de Convidados</strong><small>Convites de casamento</small></div>
@@ -25,6 +29,8 @@
         <button class="nav-item is-active" data-view="dashboard">Visão geral</button>
         <button class="nav-item" data-view="guests">Convidados</button>
         <button class="nav-item" data-view="settings">Casamento</button>
+        <button class="nav-item" data-view="personalize">Personalizar convite</button>
+        <button class="nav-item" data-view="media">Fotos do convite</button>
         <button class="nav-item" data-view="access" data-admin-only>Acessos</button>
       </nav>
       <div class="sidebar__bottom sidebar__bottom--account">
@@ -38,10 +44,11 @@
         </div>
       </div>
     </aside>
+    <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Fechar menu" hidden></button>
 
     <main class="main">
       <header class="topbar">
-        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Abrir menu">☰</button>
+        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Abrir menu" aria-controls="adminSidebar" aria-expanded="false">☰</button>
         <div>
           <span class="eyebrow">Casamento selecionado</span>
           <select id="weddingSelect" aria-label="Selecionar casamento"></select>
@@ -100,11 +107,65 @@
             <label><span>Nome do casamento</span><input name="name" required placeholder="Liliane & Igor"></label>
             <label><span>Slug</span><input name="slug" required placeholder="liliane-igor"></label>
             <label><span>Data do evento</span><input name="event_date" type="date"></label>
-            <label class="field-wide"><span>URL base do convite</span><input name="invite_base_url" required placeholder="https://meusite.com/convite/"><small>O sistema acrescentará automaticamente <b>?convite=TOKEN</b>.</small></label>
+            <label class="field-wide"><span>Link oficial do convite</span><input name="invite_base_url" required readonly aria-readonly="true" title="Endereço fixo definido pelo desenvolvedor"><small>O endereço é fixo: o sistema adiciona <b>?convite=TOKEN</b> automaticamente. Não é possível trocar o modelo por aqui.</small></label>
           </div>
           <div class="form-actions"><button class="btn btn--primary" type="submit">Salvar alterações</button></div>
         </form>
       </section>
+
+      <section class="view" id="view-personalize">
+        <div class="page-heading">
+          <div><span class="eyebrow">Convite do casamento</span><h1>Personalizar convite</h1></div>
+          <a class="btn btn--secondary" id="previewInvitation" href="#" target="_blank" rel="noopener" hidden>Visualizar convite ↗</a>
+        </div>
+        <div class="editor-intro">
+          <strong>Seu convite, do seu jeito.</strong>
+          <p>Ative ou oculte seções, escolha uma identidade visual, edite frases e configure como receber presentes. As imagens, o código e os dados dos convidados não podem ser alterados aqui.</p>
+          <p class="editor-intro__hint">As mudanças são salvas por casamento e aparecerão nos convites personalizados depois de publicar esta versão do site.</p>
+        </div>
+        <form id="personalizationForm" class="editor-form">
+          <div id="personalizationFields"></div>
+          <div class="editor-save">
+            <p class="form-status" id="editorStatus" role="status" aria-live="polite"></p>
+            <button class="btn btn--primary" id="savePersonalization" type="submit">Salvar personalização</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="view" id="view-media">
+        <div class="page-heading"><div><span class="eyebrow">Imagens do seu casamento</span><h1>Fotos do convite</h1></div></div>
+        <div class="panel media-intro">
+          <h2>Fotos independentes para cada casamento</h2>
+          <p>As fotografias adicionadas nesta área pertencem <strong>somente ao casamento selecionado</strong>. Os noivos podem escolher as próprias fotos quando o administrador permitir. Se não houver uma foto personalizada, o convite exibirá a imagem de demonstração.</p>
+          <p>Use imagens JPG, PNG ou WebP. Elas são otimizadas para WebP pelo navegador, sem publicar fotografias no GitHub. Para cada espaço, você pode enviar recortes diferentes para desktop e celular.</p>
+          <p class="form-status" id="mediaStatus" role="status" aria-live="polite"></p>
+        </div>
+        <div class="panel media-permission-panel" data-admin-only>
+          <div><span class="eyebrow">Permissão do casal</span><h2>Autonomia para enviar fotos</h2></div>
+          <label class="media-permission-toggle" for="allowCouplePhotos"><span>Permitir que os noivos editem as fotografias deste casamento <small>O administrador continua podendo editar as fotos mesmo com a opção desligada.</small></span><input type="checkbox" id="allowCouplePhotos" checked></label>
+          <p class="muted" id="mediaAccessStatus" aria-live="polite"></p>
+        </div>
+        <div class="media-catalog-panel panel" data-admin-only>
+          <div class="panel__head"><div><span class="eyebrow">Biblioteca reutilizável</span><h2>Imagens de demonstração</h2></div></div>
+          <p>As imagens originais do modelo continuam dentro do projeto como cópia de segurança. Clique uma vez para enviar as <strong>fotos ilustrativas e dos presentes</strong> ao Supabase Storage. O modelo passa a carregá-las de lá quando a importação estiver completa.</p>
+          <div class="media-catalog-actions"><button class="btn btn--secondary" id="importDemoImages" type="button">Importar imagens de exemplo para o Supabase</button><a class="text-button" href="../convite/?demo=1" target="_blank" rel="noopener">Ver demonstração ↗</a></div>
+          <p class="form-status" id="demoImagesStatus" role="status" aria-live="polite"></p>
+        </div>
+        <div class="media-slots-panel">
+          <div class="panel__head"><div><span class="eyebrow">Arquivos exclusivos do casamento</span><h2>Substituir fotografias</h2></div></div>
+          <div id="mediaSlots" class="media-slots" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <dialog id="mediaPreviewDialog" class="dialog media-preview-dialog" aria-labelledby="mediaPreviewTitle">
+        <div class="dialog__panel media-preview__panel">
+          <header><div><span class="eyebrow">Confirme antes de publicar</span><h2 id="mediaPreviewTitle">Prévia da fotografia</h2></div><button class="icon-button" type="button" data-media-preview-close="cancel" aria-label="Cancelar envio">×</button></header>
+          <div class="media-preview__frame"><img id="mediaPreviewImage" class="media-preview__photo" alt="Prévia da foto escolhida"></div>
+          <p id="mediaPreviewDetail" class="muted"></p>
+          <p class="muted">Confira se o enquadramento funciona para essa área. A foto será exibida apenas no casamento selecionado.</p>
+          <footer><button class="btn btn--ghost" type="button" data-media-preview-close="cancel">Cancelar</button><button class="btn btn--primary" type="button" id="mediaPreviewSave" data-media-preview-close="save">Salvar fotografia</button></footer>
+        </div>
+      </dialog>
 
       <section class="view" id="view-access" data-admin-only>
         <div class="page-heading">
@@ -244,7 +305,7 @@
         <label class="field-wide"><span>Nome</span><input name="name" required placeholder="Amanda & Lucas"></label>
         <label><span>Slug</span><input name="slug" required placeholder="amanda-lucas"></label>
         <label><span>Data</span><input name="event_date" type="date"></label>
-        <label class="field-wide"><span>URL base do convite</span><input name="invite_base_url" required></label>
+        <label class="field-wide"><span>Link oficial do convite</span><input name="invite_base_url" required readonly aria-readonly="true" title="Endereço fixo definido pelo desenvolvedor"></label>
       </div>
       <footer><button class="btn btn--ghost" type="button" data-close-wedding>Cancelar</button><button class="btn btn--primary" type="submit">Criar casamento</button></footer>
     </form>
@@ -252,6 +313,9 @@
 
   <script src="js/config.js"></script>
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="../convite/js/config.js"></script>
+  <script src="../convite/js/gifts-config.js"></script>
+  <script src="../convite/js/pix-code.js"></script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

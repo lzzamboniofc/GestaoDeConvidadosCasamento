@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F5F2EC">
+  <meta name="description" content="Convite digital de casamento">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Convite de casamento">
+  <meta property="og:description" content="Você é nosso convidado para celebrar este dia com a gente.">
+  <meta property="og:image" content="assets/images/hero.jpg">
+  <title>Convite de casamento</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&family=Great+Vibes&family=Inter:wght@400;500;600&family=Lora:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-locked">
+  <noscript><div class="noscript">Este convite precisa de JavaScript habilitado.</div></noscript>
+
+  <div class="opening" id="opening" aria-label="Abertura do convite">
+    <div class="opening__photo"><img id="openingImage" src="assets/images/hero.jpg" alt=""></div>
+    <div class="opening__veil"></div>
+    <div class="opening__content">
+      <span class="opening__monogram" data-text="couple.initials"></span>
+      <p class="eyebrow eyebrow--light" data-text="opening.eyebrow"></p>
+      <p class="opening__guest-label" id="personalGreetingLabel"></p>
+      <p class="opening__guest" id="personalGreeting"></p>
+      <h1 data-text="opening.title"></h1>
+      <p class="opening__hint" data-text="opening.hint"></p>
+      <button class="button button--light" id="openInvitation" type="button" data-text="opening.buttonLabel">Abrir convite</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#inicio" aria-label="Voltar ao início">
+      <span data-text="couple.initials"></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Navegação principal">
+      <a href="#historia">História</a>
+      <a href="#detalhes">O dia</a>
+      <a href="#galeria">Fotos</a>
+      <a href="#presentes">Presentes</a>
+      <a href="#informacoes">Informações</a>
+      <a class="site-nav__rsvp" href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <img class="hero__image" id="heroImage" src="assets/images/hero.jpg" alt="Foto do casal">
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light" data-text="hero.eyebrow"></p>
+        <h1><span data-text="couple.firstName"></span><i>&</i><span data-text="couple.secondName"></span></h1>
+        <p class="hero__title" data-text="hero.title"></p>
+        <p class="hero__subtitle" data-text="hero.subtitle"></p>
+        <p class="hero__guest-badge" id="heroGuestBadge" hidden></p>
+        <div class="hero__date">
+          <span data-text="wedding.weekday"></span>
+          <strong data-text="wedding.day"></strong>
+          <span><b data-text="wedding.month"></b> · <b data-text="wedding.year"></b></span>
+        </div>
+        <div class="hero__actions">
+          <a class="button button--light" href="#rsvp" data-text="hero.primaryButton"></a>
+          <a class="button button--ghost-light" href="#detalhes" data-text="hero.secondaryButton"></a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#boas-vindas">Descubra <span>↓</span></a>
+    </section>
+
+    <section class="welcome section" id="boas-vindas">
+      <div class="shell welcome__grid">
+        <div>
+          <p class="eyebrow" data-text="welcome.eyebrow"></p>
+          <h2 class="display-title" data-text="welcome.title"></h2>
+          <p class="lead" data-text="welcome.text"></p>
+          <p class="signature" data-text="couple.signature"></p>
+        </div>
+        <aside class="countdown-card">
+          <span>Falta pouco</span>
+          <div class="countdown" id="countdown">
+            <div><strong data-count="days">00</strong><small>dias</small></div>
+            <div><strong data-count="hours">00</strong><small>horas</small></div>
+            <div><strong data-count="minutes">00</strong><small>min</small></div>
+            <div><strong data-count="seconds">00</strong><small>seg</small></div>
+          </div>
+          <!-- <button class="text-action" id="calendarButton" type="button">Adicionar ao calendário →</button> -->
+        </aside>
+      </div>
+    </section>
+
+    <section class="story section section--surface" id="historia">
+      <div class="shell story__grid">
+        <div class="section-heading section-heading--center">
+          <p class="display-title" data-text="story.pretitle"></p>
+          <br>
+          <p class="eyebrow" data-text="story.phrase"></p>
+        </div>
+        <div class="story__image-wrap">
+          <img id="storyImage" src="assets/images/story.jpg" alt="Foto do casal" loading="lazy">
+          <span class="story__year" data-text="story.year"></span>
+        </div>
+        <div class="story__copy">
+          <p class="eyebrow" data-text="story.eyebrow"></p>
+          <h2 class="display-title" data-text="story.title"></h2>
+          <div id="storyParagraphs" class="story__paragraphs"></div>
+          <blockquote data-text="story.quote"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="details section" id="detalhes">
+      <div class="shell">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow" data-text="details.eyebrow"></p>
+          <h2 class="display-title" data-text="details.title"></h2>
+          <p class="section-note"><span data-text="wedding.longDate"></span> · <span data-text="wedding.city"></span></p>
+        </div>
+        <div class="event-grid" id="eventGrid"></div>
+      </div>
+    </section>
+
+    <section class="schedule section section--dark" id="programacao">
+      <div class="shell schedule__grid">
+        <div class="schedule__intro">
+          <p class="eyebrow eyebrow--light" data-text="schedule.eyebrow"></p>
+          <h2 class="display-title display-title--light" data-text="schedule.title"></h2>
+          <p data-text="schedule.note"></p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="gallery section" id="galeria">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow" data-text="gallery.eyebrow"></p>
+          <h2 class="display-title" data-text="gallery.title"></h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="dress section section--surface" id="dress-code">
+      <div class="shell dress__grid">
+        <div class="dress__copy">
+          <p class="eyebrow" data-text="dressCode.eyebrow"></p>
+          <h2 class="display-title" data-text="dressCode.title"></h2>
+          <p class="lead" data-text="dressCode.text"></p>
+          <p class="dress__note" data-text="dressCode.note"></p>
+          <div class="palette" id="dressPalette" aria-label="Sugestão de paleta"></div>
+        </div>
+        <div class="dress__image-wrap">
+          <!-- <img id="dressImage" src="assets/images/dress-code.jpg" alt="Referência de dress code" loading="lazy"> -->
+          <!-- <span>Dress<br>code</span> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="guest-info section" id="informacoes">
+      <div class="shell">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow" data-text="guestInfo.eyebrow"></p>
+          <h2 class="display-title" data-text="guestInfo.title"></h2>
+        </div>
+        <div class="info-grid" id="infoGrid"></div>
+      </div>
+    </section>
+
+    <section class="faq section section--surface" id="duvidas">
+      <div class="shell faq__grid">
+        <div>
+          <p class="eyebrow" data-text="faq.eyebrow"></p>
+          <h2 class="display-title" data-text="faq.title"></h2>
+        </div>
+        <div class="accordion" id="faqList"></div>
+      </div>
+    </section>
+
+    <section class="gifts-preview section" id="presentes">
+      <div class="shell gifts-preview__inner">
+        <span class="eyebrow">Uma forma de carinho</span>
+        <h2 class="display-title" data-text="gifts.title">Lista de presentes</h2>
+        <p data-text="gifts.intro">Sua presença é o maior presente. Se quiser contribuir com nossos planos, conheça nossa lista.</p>
+        <a class="button button--primary" data-gifts-link href="presentes.html">Conhecer a lista de presentes →</a>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp">
+      <div class="rsvp__photo"><img id="rsvpImage" src="assets/images/rsvp.jpg" alt="Foto do casal" loading="lazy"></div>
+      <div class="rsvp__panel">
+        <div class="rsvp__inner">
+          <p class="eyebrow" data-text="rsvp.eyebrow"></p>
+          <h2 class="display-title" data-text="rsvp.title"></h2>
+          <p data-text="rsvp.text"></p>
+          <p class="rsvp__deadline">Confirme até <strong data-text="rsvp.deadline"></strong></p>
+          <p class="rsvp-limit-note" id="rsvpLimitNote"></p>
+          <form id="rsvpForm" class="rsvp-form">
+            <label><span>Nome completo</span><input type="text" name="nome" id="rsvpName" autocomplete="name" required placeholder="Seu nome"></label>
+            <div class="form-row">
+              <label><span>Você vai?</span><select name="presenca" required><option value="">Selecione</option><option value="Sim, estarei presente">Sim, estarei presente</option><option value="Infelizmente não poderei ir">Infelizmente não poderei ir</option></select></label>
+              <label id="guestCountField"><span>Nº de pessoas</span><input type="number" name="convidados" id="guestCount" min="1" value="1" inputmode="numeric"></label>
+            </div>
+            <div class="rsvp-members" id="rsvpMembers" hidden>
+              <span>Quem estará presente?</span>
+              <p>Selecione as pessoas deste convite que irão ao casamento.</p>
+              <div class="rsvp-members__list" id="rsvpMemberOptions"></div>
+            </div>
+            <label><span>Mensagem para os noivos</span><textarea name="mensagem" rows="3" placeholder="Opcional"></textarea></label>
+            <button class="button button--primary button--wide" type="submit" data-text="rsvp.buttonLabel"></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__monogram" data-text="couple.initials"></div>
+    <h2><span data-text="couple.firstName"></span> <i>&</i> <span data-text="couple.secondName"></span></h2>
+    <p data-text="footer.text"></p>
+    <span><span data-text="wedding.longDate"></span> · <span data-text="wedding.city"></span></span>
+  </footer>
+
+
+  <dialog class="rsvp-success-dialog" id="rsvpSuccessDialog" aria-labelledby="rsvpSuccessTitle">
+    <div class="rsvp-success-dialog__panel">
+      <span class="rsvp-success-dialog__icon" aria-hidden="true">✓</span>
+      <p class="eyebrow">Confirmação recebida</p>
+      <h2 id="rsvpSuccessTitle">Sua resposta foi registrada.</h2>
+      <p id="rsvpSuccessText">Obrigado por confirmar. Deseja recarregar o convite agora?</p>
+      <div class="rsvp-success-dialog__actions">
+        <button class="button button--ghost" id="rsvpStayButton" type="button">Agora não</button>
+        <button class="button button--primary" id="rsvpReloadButton" type="button">Sim, recarregar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Fechar">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Foto anterior">←</button>
+    <figure><img id="lightboxImage" src="" alt=""><figcaption id="lightboxCaption"></figcaption></figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Próxima foto">→</button>
+  </div>
+
+  <div class="music-player" id="musicPlayer" hidden>
+    <button class="music-player__button" id="musicToggle" type="button" aria-label="Tocar música" aria-pressed="false">
+      <span class="music-player__disc" aria-hidden="true">
+        <span class="music-player__disc-core"></span>
+        <span class="music-player__control-icon"></span>
+      </span>
+      <span class="music-player__copy">
+        <strong>Trilha sonora</strong>
+        <small id="musicStatus">Tocar música</small>
+      </span>
+      <span class="music-player__equalizer" aria-hidden="true">
+        <i></i><i></i><i></i><i></i>
+      </span>
+    </button>
+    <audio id="backgroundMusic" preload="metadata" loop></audio>
+  </div>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/config.js"></script>
+  <script src="js/guest-system.js"></script>
+  <script src="js/personalization.js"></script>
+  <script src="js/media.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -24,8 +24,8 @@ window.GUEST_ADMIN_CONFIG = {
   supabaseUrl: "https://oblucxwvsouyjhfqaten.supabase.co",
   publishableKey: "sb_publishable_1NGjECehE1zlq5jYGa6cCQ_3w0Jb4bb",
 
-  // Usado como sugestão ao criar um casamento novo.
-  defaultInviteBaseUrl: "../convites/nivel-3/index.html",
+  // Única rota pública, fixa para todos os casamentos e convites.
+  defaultInviteBaseUrl: "../convite/",
 
   // Importação e exportação de convidados por planilha.
   importTemplateUrl: "../modelos/modelo-importacao-convidados.xlsx",
