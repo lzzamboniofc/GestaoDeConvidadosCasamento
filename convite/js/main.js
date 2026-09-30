@@ -403,12 +403,14 @@
   };
 
   if (C.music?.enabled && C.music?.file && backgroundMusic && musicToggle) {
-    backgroundMusic.src = C.music.file;
+    // Só baixa a trilha sonora (aprox. 5,8 MB) se o visitante pedir para tocar.
+    backgroundMusic.preload = 'none';
     const requestedVolume = Number(C.music.volume);
     backgroundMusic.volume = Number.isFinite(requestedVolume) ? Math.min(1, Math.max(0, requestedVolume)) : 0.55;
     musicToggle.addEventListener('click', async () => {
       if (backgroundMusic.paused || backgroundMusic.ended) {
         try {
+          if (!backgroundMusic.getAttribute('src')) backgroundMusic.src = C.music.file;
           await backgroundMusic.play();
         } catch (error) {
           console.warn('Não foi possível iniciar a música:', error);

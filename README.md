@@ -122,3 +122,16 @@ Se uma imagem não carregar, confira o arquivo no Storage, as políticas de aces
 - **Desfazer última troca** restaura a fotografia anterior daquele espaço. Fica guardada somente uma versão anterior; depois de uma nova substituição, o backup mais antigo pode ser apagado. **Restaurar imagem de exemplo** limpa a associação daquele espaço e remove também o backup.
 - Para testes e novos casamentos, as imagens de exemplo permanecem no bucket demonstrativo e como fallback local. **Importar imagens de exemplo para o Supabase** continua sendo ação exclusiva do administrador.
 - Quando a conta do casal não consegue editar, confirme no Supabase `wedding_members`, `wedding_media_permissions` e o status da sessão. Não modifique RLS para `USING (true)` e não publique fotos particulares em bucket público.
+
+### Correções de experiência (v1.16, sem alteração de versão)
+
+- Na página de presentes, o menu mobile tem superfície sólida do tema, contraste e o botão hambúrguer vira ×. Também fecha com Esc ou ao escolher um item. O menu desktop mantém o alinhamento no topo.
+- Retirados os números decorativos das fotos dos presentes. O título, a categoria e o valor continuam visíveis.
+- Modal dos presentes centralizado também no mobile, com rolagem interna em telas menores e PIX intacto.
+- O carregamento do marcador da biblioteca demonstrativa ocorre em paralelo à busca do convite e espera no máximo 180 ms. Se não houver confirmação, as imagens locais permanecem como alternativa; em visita posterior, a biblioteca já detectada é reaproveitada nesta sessão. A verificação obrigatória do token ainda depende da resposta da Edge Function.
+- A música MP3 passa a carregar somente após o visitante clicar em **Tocar música**.
+- A lista de presentes carrega apenas as famílias tipográficas oferecidas na personalização, evitando buscar dezenas de fontes não utilizadas.
+- Imagens dos 15 presentes seguem como acervo ilustrativo fixo; a edição específica dessas imagens pelos noivos ainda **não** faz parte desta correção.
+
+Valide no celular após publicar: abertura do convite, menu em presentes, modal e botão copiar PIX; no desktop, confira alinhamento do menu e modal. Não há migração SQL nem publicação adicional de funções.
+

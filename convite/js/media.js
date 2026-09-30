@@ -115,16 +115,26 @@
     document.querySelectorAll('a[href="#rsvp"]').forEach(a=>{a.href='#detalhes';a.textContent='Ver detalhes';});
     document.body.classList.add('is-sample-demo');
   }
+  // Inicia a conferência do acervo antes da consulta ao convidado, em paralelo.
+  // Não bloqueia a abertura se o Storage estiver lento (ou o marcador ainda não existir).
+  const demoMarkerKey = 'wedding_demo_library_ready_v1';
+  let readyFromSession = false;
+  try {readyFromSession=sessionStorage.getItem(demoMarkerKey)==='1';} catch {}
+  const probePromise = origin.startsWith('https://') && !readyFromSession
+    ? fetch(demoRoot+'_ready.png',{method:'GET',cache:'default'})
+        .then(response=>{
+          if(response.ok){try{sessionStorage.setItem(demoMarkerKey,'1');}catch{}}
+          return response.ok;
+        }).catch(()=>false)
+    : Promise.resolve(readyFromSession);
   async function apply(media = {}) {
-    if (origin.startsWith('https://')) {
-      try {
-        // O marcador é enviado por último. Até a importação terminar, mantém-se o acervo local.
-        const probe = await fetch(demoRoot + '_ready.png', {method:'GET',cache:'no-store'});
-        if (probe.ok) {
-          for (const getter of Object.values(slots)) replaceSamples(getter());
-          (G.items || []).forEach(item => { if (typeof item.image==='string') item.image=replaceSamples(item.image); });
-        }
-      } catch (error) { console.info('Biblioteca local de demonstração ativa.'); }
+    // Espera no máximo 180 ms; fotos próprias são aplicadas independentemente do marcador.
+    const hasSampleLibrary = readyFromSession || await Promise.race([
+      probePromise, new Promise(resolve=>setTimeout(()=>resolve(false),180))
+    ]);
+    if(hasSampleLibrary){
+      for(const getter of Object.values(slots)) replaceSamples(getter());
+      (G.items||[]).forEach(item=>{if(typeof item.image==='string') item.image=replaceSamples(item.image);});
     }
     applyPrivateOverrides(media);
   }

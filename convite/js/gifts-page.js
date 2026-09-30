@@ -50,7 +50,7 @@
   const filters=$('#giftFilters');let filter='all';
   filters.innerHTML=G.categories.map(c=>`<button type="button" class="gift-filter ${c.id==='all'?'is-active':''}" data-filter="${esc(c.id)}" aria-pressed="${c.id==='all'}">${esc(c.label)}</button>`).join('');
   const grid=$('#giftGrid');
-  grid.innerHTML=G.items.map((item,i)=>`<article class="gift-card" data-category="${esc(item.category)}"><button class="gift-card__button" data-open="${esc(item.id)}" type="button" aria-label="Ver presente: ${esc(item.title)}"><div class="gift-card__media"><img loading="lazy" src="${esc(item.image)}" alt="${esc(item.title)}"><span class="gift-card__number">${String(i+1).padStart(2,'0')}</span></div><span class="gift-card__category">${esc(label(item.category))}</span><h3>${esc(item.title)}</h3><p class="gift-card__description">${esc(item.description)}</p><div class="gift-card__bottom"><strong class="gift-card__price">${money.format(item.price)}</strong><span class="gift-card__cta">Presentear →</span></div></button></article>`).join('');
+  grid.innerHTML=G.items.map((item,i)=>`<article class="gift-card" data-category="${esc(item.category)}"><button class="gift-card__button" data-open="${esc(item.id)}" type="button" aria-label="Ver presente: ${esc(item.title)}"><div class="gift-card__media"><img loading="lazy" src="${esc(item.image)}" alt="${esc(item.title)}"></div><span class="gift-card__category">${esc(label(item.category))}</span><h3>${esc(item.title)}</h3><p class="gift-card__description">${esc(item.description)}</p><div class="gift-card__bottom"><strong class="gift-card__price">${money.format(item.price)}</strong><span class="gift-card__cta">Presentear →</span></div></button></article>`).join('');
   const applyFilter=(id,scroll=false)=>{
     filter=id;let count=0;
     $$('.gift-card').forEach(card=>{const yes=id==='all'||card.dataset.category===id;card.hidden=!yes;if(yes)count++});
@@ -135,8 +135,29 @@
     if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
     else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
   });
-  const navToggle=$('#giftMenuToggle');navToggle.addEventListener('click',()=>{let active=document.body.classList.toggle('gift-menu-open');navToggle.setAttribute('aria-expanded',String(active))});
-  $$('#giftNav a').forEach(el=>el.addEventListener('click',()=>{document.body.classList.remove('gift-menu-open');navToggle.setAttribute('aria-expanded','false')}));
+  const navToggle=$('#giftMenuToggle'), giftNav=$('#giftNav');
+  const closeGiftMenu=()=>{
+    document.body.classList.remove('gift-menu-open');
+    navToggle.setAttribute('aria-expanded','false');
+    navToggle.setAttribute('aria-label','Abrir menu');
+    giftNav.inert=window.matchMedia('(max-width: 899px)').matches;
+  };
+  navToggle.addEventListener('click',()=>{
+    const active=document.body.classList.toggle('gift-menu-open');
+    navToggle.setAttribute('aria-expanded',String(active));
+    navToggle.setAttribute('aria-label',active?'Fechar menu':'Abrir menu');
+    giftNav.inert=!active;
+  });
+  $$('#giftNav a').forEach(el=>el.addEventListener('click',closeGiftMenu));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape' && document.body.classList.contains('gift-menu-open')){
+      closeGiftMenu();navToggle.focus();
+    }
+  });
+  window.matchMedia('(min-width: 900px)').addEventListener('change',event=>{
+    closeGiftMenu();
+  });
+  if(window.matchMedia('(min-width: 900px)').matches) giftNav.inert=false;
   const onScroll=()=>{const limit=document.documentElement.scrollHeight-innerHeight;$('#giftProgressBar').style.width= limit>0?`${Math.min(100,scrollY/limit*100)}%`:'0%';$('#giftBackToTop').classList.toggle('is-visible',scrollY>350)};
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
